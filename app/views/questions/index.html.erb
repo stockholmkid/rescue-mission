@@ -1,0 +1,12 @@
+<h1>Questions</h1>
+
+<ul>
+  <% @questions.each do |question| %>
+    <li><%= question.title %> </li>
+    <%= link_to 'Link to Description', question_path(question) %>
+  <% end %>
+
+</ul>
+
+
+<%= link_to 'Ask Question', new_question_path, class: "button", id: "ask-question-id" %>

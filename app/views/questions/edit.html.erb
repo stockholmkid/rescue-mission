@@ -1,0 +1,22 @@
+<%= form_for @question do |f| %>
+
+Title: <%= f.text_field :title %> <br>
+Description: <br>
+<%= f.text_area :description, size: "60x12" %> <br>
+<%= f.submit "Edit" %>
+<% end %>
+<%= link_to 'Delete Question', question_path(@question), :method => :delete%>
+
+
+<%= form_for @question do |f| %>
+
+<% if @question.errors.any? %>
+    <ul>
+      <% @question.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  <% end %>
+  <% end %>
+
+  <%= link_to 'Back', question_path, class: "button", id: "ask-question-id" %>
